@@ -26,44 +26,6 @@ class ProductCard extends StatelessWidget {
                 Positioned.fill(
                   child: Image.network(product.image),
                 ),
-                Positioned(
-                  top: 6,
-                  right: 6,
-                  child: InkWell(
-                    onTap: () async {
-                      // final list = await showModalBottomSheet<PurchaseList?>(
-                      //     context: context,
-                      //     builder: (_){
-                      //       return const PurchaseListDialog();
-                      //     },
-                      //     shape: const RoundedRectangleBorder(borderRadius: BorderRadius.only(topLeft: Radius.circular(radiusM),topRight: Radius.circular(radiusM))),
-                      //     constraints: const BoxConstraints(maxWidth: 700,maxHeight: 400),
-                      //     isScrollControlled: true
-                      // );
-                      // if(list == null){
-                      //   return;
-                      // }
-                      // final item = PurchaseListItem(id: "", offerID: product.id);
-                      // showProgressDialog(context);
-                      // try{
-                      //   final response = await item.add(purchaseList: list.id);
-                      //   if(response.success){
-                      //     GlobalSnackBar.show(context, "Item added to wishlist".translate,color: Colors.green);
-                      //   }else{
-                      //     GlobalSnackBar.show(context, response.message.translate,color: Colors.red);
-                      //   }
-                      // }catch(ex){
-                      //   printDebug(ex.toString());
-                      // }finally{
-                      //   Navigator.of(context,rootNavigator: true).pop();
-                      // }
-                    },
-                    child: const CircleAvatar(
-                      radius: 10,
-                      child: Icon(Icons.add_shopping_cart_rounded,size: 12,),
-                    ),
-                  ),
-                )
               ],
             ),
           ),

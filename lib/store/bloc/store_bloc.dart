@@ -11,6 +11,7 @@ class StoreBloc extends Bloc<StoreEvent, StoreState> {
     on<StoreProductsRequested>(_handleStoreProductsRequested);
     on<StoreProductsAddedToCart>(_handleProductAddedToCart);
     on<StoreProductsRemovedFromCart>(_handleProductRemovedFromCart);
+    on<StoreEmptyCart>(_handleEmptyCart);
   }
 
   final StoreRepository api = StoreRepository();
@@ -46,5 +47,12 @@ class StoreBloc extends Bloc<StoreEvent, StoreState> {
     Emitter<StoreState> emit,
   ) async {
     emit(state.copyWith(cart: {...state.cart}..remove(event.cartId)));
+  }
+
+  Future<void> _handleEmptyCart(
+    StoreEmptyCart event,
+    Emitter<StoreState> emit,
+    ) async {
+    emit(state.copyWith(cart: {}));
   }
 }

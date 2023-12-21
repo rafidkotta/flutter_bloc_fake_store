@@ -13,3 +13,5 @@ class StoreProductsRemovedFromCart extends StoreEvent{
   StoreProductsRemovedFromCart(this.cartId);
   final int cartId;
 }
+
+class StoreEmptyCart extends StoreEvent{}

@@ -1,3 +1,5 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -13,6 +15,32 @@ class CartScreen extends StatelessWidget{
     return Scaffold(
       appBar: AppBar(
         title: const Text("My cart"),
+        actions: [
+          if(cartItems.isNotEmpty)
+          IconButton(
+            onPressed: () async {
+              final clear = (await showDialog<bool?>(
+                  context: context,
+                  builder: (ctx){
+                    return AlertDialog(
+                      icon: Icon(Icons.warning,size: 36,color: Colors.amber.shade800,),
+                      iconPadding: const EdgeInsets.all(16).add(const EdgeInsets.only(top: 30)),
+                      title: const Text("Empty cart!"),
+                      content: const Text("Clear all products in cart ?",textAlign: TextAlign.center,),
+                      actions: [
+                        TextButton(onPressed: () => Navigator.of(context).pop(true), child: const Text("Yes")),
+                        TextButton(onPressed: () => Navigator.of(context).pop(false), child: const Text("No"))
+                      ],
+                    );
+                  },
+              ) ?? false);
+              if(clear){
+                context.read<StoreBloc>().add(StoreEmptyCart());
+              }
+            },
+            icon: const Icon(Icons.delete),
+          )
+        ],
       ),
       body: Builder(
         builder: (context) {
