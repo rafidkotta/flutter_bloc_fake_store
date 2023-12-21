@@ -1,5 +1,6 @@
-import 'package:bloc_demo/store/models/product.dart';
 import 'package:dio/dio.dart';
+
+import '../store.dart';
 
 class StoreRepository{
   final Dio _client = Dio(BaseOptions(

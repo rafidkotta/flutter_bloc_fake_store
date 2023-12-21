@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
-import 'package:bloc_demo/store/repository/store_repository.dart';
 import 'package:flutter/foundation.dart';
 
+import '../repository/store_repository.dart';
 import 'store_event.dart';
 import 'store_state.dart';
 

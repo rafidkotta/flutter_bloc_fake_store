@@ -1,6 +1,7 @@
-import 'package:bloc_demo/theme/bloc/theme_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../theme/theme.dart';
 
 class ThemeSwitch extends StatelessWidget{
   const ThemeSwitch({super.key});

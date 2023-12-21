@@ -1,8 +1,9 @@
 // ignore_for_file: use_build_context_synchronously
 
-import 'package:bloc_demo/store/store.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../store/store.dart';
 
 class ProductCard extends StatelessWidget {
   const ProductCard({super.key, required this.product,this.inCart = false});
