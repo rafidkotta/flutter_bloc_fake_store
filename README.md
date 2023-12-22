@@ -12,6 +12,6 @@
 
 ## Web App
 
-![https://fakestore-bloc.web.app/](https://fakestore-bloc.web.app/)
+[https://fakestore-bloc.web.app/](https://fakestore-bloc.web.app/)
 
 Note: Application has built with flutter web. For a better user experience, please use a mobile device to open this link.
