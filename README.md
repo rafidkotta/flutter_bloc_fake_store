@@ -1,16 +1,17 @@
-# bloc_demo
+# Flutter Online Shopping App using Bloc
 
-A new Flutter project.
+• Products
+• Cart
+• Theme switch - Dark / Light / System
 
-## Getting Started
+## Screenshots
 
-This project is a starting point for a Flutter application.
+![Screenshot 1](/screenshots/screenshot_1.png)
+![Screenshot 2](/screenshots/screenshot_2.png)
+![Screenshot 3](/screenshots/screenshot_3.png)
 
-A few resources to get you started if this is your first Flutter project:
+## Web App
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+![https://fakestore-bloc.web.app/](https://fakestore-bloc.web.app/)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Note: Application has built with flutter web. For a better user experience, please use a mobile device to open this link.
