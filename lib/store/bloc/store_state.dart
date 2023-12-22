@@ -23,6 +23,10 @@ class StoreState extends Equatable {
     status: status ?? this.status,
   );
 
+  double get cartTotal{
+    return products.where((element) => cart.contains(element.id)).toList().fold(0, (previousValue, element) => previousValue + element.price);
+  }
+
   @override
   List<Object?> get props => [status,cart,products];
 }

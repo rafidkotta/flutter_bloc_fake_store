@@ -44,7 +44,7 @@ class _StoreHomeState extends State<StoreHome> {
             onPressed: (){
               Navigator.of(context).push(MaterialPageRoute(builder: (ctx) => BlocProvider.value(value: BlocProvider.of<StoreBloc>(context), child: const CartScreen())),);
             },
-            child: const Icon(Icons.shopping_bag),
+            child: const Icon(Icons.shopping_bag,color: Colors.white,),
           ),
           BlocBuilder<StoreBloc, StoreState>(
             builder: (context, state) {

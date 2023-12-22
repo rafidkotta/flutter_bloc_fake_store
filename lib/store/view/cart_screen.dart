@@ -42,6 +42,66 @@ class CartScreen extends StatelessWidget{
           )
         ],
       ),
+      bottomNavigationBar: BlocBuilder<StoreBloc, StoreState>(
+        builder: (context, state) {
+          bool empty = state.cart.isEmpty;
+          return SafeArea(
+              child: AnimatedOpacity(
+                duration: const Duration(milliseconds: 500),
+                opacity: empty ? .3 : 1,
+                child: SizedBox(
+                  height: kToolbarHeight + 30,
+                  width: double.infinity,
+                  child: Padding(
+                    padding: const EdgeInsets.all(12.0),
+                    child: Card(
+                      clipBehavior: Clip.hardEdge,
+                      color: Colors.deepPurple,
+                      shape: ContinuousRectangleBorder(borderRadius: BorderRadius.circular(20)),
+                      child: InkWell(
+                        overlayColor: MaterialStateProperty.all(Colors.deepPurple.shade800),
+                        onTap: empty ? null : () {
+                          debugPrint("check out");
+                        },
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Flexible(
+                              child: DefaultTextStyle(
+                                style: const TextStyle(color: Colors.white),
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.min,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text("${cartItems.length} ${cartItems.length == 1 ? "item" : "items"}"),
+                                    Text("AED ${state.cartTotal.toStringAsFixed(2)}"),
+                                  ],
+                                ),
+                              ),
+                            ),
+                            const Expanded(child: Text("CHECKOUT",style: TextStyle(fontWeight: FontWeight.bold,color:Colors.white),)),
+                            Flexible(
+                              child: Container(
+                                height: 30,
+                                width: 40,
+                                decoration: ShapeDecoration(
+                                  shape: ContinuousRectangleBorder(borderRadius: BorderRadius.circular(20)),
+                                  color: Colors.white,
+                                ),
+                                child: const Icon(Icons.arrow_forward,color: Colors.black,),
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            );
+        },
+      ),
       body: Builder(
         builder: (context) {
           if(cartItems.isEmpty){
